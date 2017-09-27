@@ -68,7 +68,11 @@ export class NgxSocialSigninService {
         }
 
         // resolve with authorization code
-        return resolve({provider: provider, code: redirectionCompleteResult.code});
+        return resolve({
+          provider: provider, 
+          code: redirectionCompleteResult.code,
+          redirectUrl: this.config[provider].redirectUrl
+        });
       }
     }, 1000);
   }
@@ -106,7 +110,7 @@ export class NgxSocialSigninService {
   /*********************************************/
 
   // perform sign in
-  signin(provider: string): Promise<{provider: any, code: any}> {
+  signin(provider: string): Promise<{provider: any, code: any, redirectUrl: any}> {
     return new Promise((resolve, reject) => {
       if(_.get(this.config, provider)){
         if(provider == 'facebook') {

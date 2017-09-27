@@ -54,7 +54,7 @@ export class MyComponent implements OnInit {
 
 	  socialSignIn(provider: string) {
 	    this.ngxSocialSigninService.signin(provider).then((data) => {
-	      console.log(data); // like: {provider: "facebook", code: "xxxxxxxx"}
+	      console.log(data); // like: {provider: "facebook", code: "xxxxxxxx", redirectUrl: "xxxxx"}
 	    }).catch((err) => {
 	      console.log(err); // like: {provider: "facebook", errCode: "WINDOW_CLOSED", err: "Sign in window was closed by the user."}
 	    });
