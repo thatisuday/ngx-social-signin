@@ -1,6 +1,9 @@
 # ngx-social-signin
 A social sign in module for Angular 4+
 
+[![npm version](https://badge.fury.io/js/ngx-social-signin.svg)](https://badge.fury.io/js/ngx-social-signin)
+[![npm downloads](https://img.shields.io/npm/dt/ngx-social-signin.svg)](https://badge.fury.io/js/ngx-social-signin)
+
 
 ## Install
 ```
