@@ -5,19 +5,19 @@ A social sign in module for Angular 4+
 [![npm downloads](https://img.shields.io/npm/dt/ngx-social-signin.svg)](https://badge.fury.io/js/ngx-social-signin)
 
 
-## Install
+### Install
 ```
 npm i -S ngx-social-signin
 ```
 
 
-## Import
+### Import
 ```
 import { NgxSocialSigninModule } from 'ngx-social-signin';
 ```
 
 
-## Configure
+### Configure
 ```
 @NgModule({
 	imports: [
@@ -42,7 +42,7 @@ import { NgxSocialSigninModule } from 'ngx-social-signin';
 > Note that `redirectUrl` really doesn't matter. You just need to provide any valid redirect url configured in your social network application. 
 
 
-## Use
+### Use
 my.component.ts
 ```
 export class MyComponent implements OnInit {
@@ -65,25 +65,62 @@ export class MyComponent implements OnInit {
 my.component.html
 ```
 <div class="social-buttons">
-    <button class="ui grey mini curved left labeled icon button" (click)="socialSignIn('facebook')">
-      <i class="ion-social-facebook icon"></i> Facebook
-    </button>
-    <button class="ui grey mini curved left labeled icon button" (click)="socialSignIn('instagram')">
-      <i class="ion-social-instagram icon"></i> Instagram
-    </button>
-    <button class="ui grey mini curved left labeled icon button" (click)="socialSignIn('google')">
-      <i class="ion-social-google icon"></i> Google Plus
-    </button>
-  </div>
+	<button (click)="socialSignIn('facebook')">
+		Facebook
+	</button>
+
+	<button (click)="socialSignIn('instagram')">
+		Instagram
+	</button>
+
+	<button (click)="socialSignIn('google')">
+		Google Plus
+	</button>
+	</div>
 </div>
 ```
 
 > When user clicks on the button, a popup window will open showing user a default form provided by social network to sign in and confirm data sharing. If user denies to share info or closes the popup window, you will get an error in `catch` block with error code and reason. If everything goes well, you will get `code` token returned by social network in `then` block.
 
+#### data: success
+```
+{
+	provider: "provider-xx", 
+	code: "code-xx"
+}
+```
 
-## Getting user data
+#### data: error
+```
+{
+	  provider: provider,
+	  errCode: 'WINDOW_CLOSED',
+	  err: 'Sign in window was closed by the user.'
+}
+```
+
+```
+{
+	provider: provider,
+	errCode: 'AUTH_CODE_MISSING',
+	err: 'No authorization code was returned.'
+}
+```
+
+```
+{
+	provider: provider,
+	errCode: 'MISSING_PROVIDER',
+	err: 'Either this provider is not valid or configuation is missing for this provider.'
+}
+```
+
+---
+
+### Getting user data
 This service returns authorization `code` token from the social network provider. Using that token, you can retrieve user data by making API calls using app id and secret in you backend. There are many modules available to do it, but I will be releasing one soon. 
 
+---
 
-## Contribution
+### Contribution
 To add more providers, you can create an issue here with provider API call url for getting a `code` token. I will try my best to add that provider as quickly as possible.
