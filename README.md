@@ -24,7 +24,7 @@ import { NgxSocialSigninModule } from 'ngx-social-signin';
 		NgxSocialSigninModule.forRoot({
 	      facebook: {
 	        appId: '10xxxxxxxxxxxxxx43',
-	        redirectUrl: 'http://localhost:4200'
+	        redirectUrl: 'http://localhost:4200/'
 	      },
 	      instagram: {
 	        appId: '17xxxxxxxxxxxxxxxxx250',
