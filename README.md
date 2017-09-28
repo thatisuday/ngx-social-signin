@@ -45,6 +45,10 @@ import { NgxSocialSigninModule } from 'ngx-social-signin';
 ### Use
 my.component.ts
 ```
+
+import { Component, OnInit } from '@angular/core';
+import { NgxSocialSigninService } from 'ngx-social-signin';
+
 export class MyComponent implements OnInit {
 	constructor(
 	    private ngxSocialSigninService: NgxSocialSigninService

@@ -1,6 +1,6 @@
 {
   "name": "ngx-social-signin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A social sign in module for Angular 4+",
   "main": "index.js",
   "scripts": {
